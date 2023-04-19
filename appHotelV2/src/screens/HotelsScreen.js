@@ -32,7 +32,7 @@ const Ver = () => {
     console.log(data_user.id);
     const User_id = data_user.id;
     //console.log(data_user.name);
-    const response = await fetch(`https://apphotel.iidtec.com/api/v1/hotels`, {
+    const response = await fetch(`http://127.0.0.1:8000/api/v1/hotels`, {
       headers: {
         Authorization: `Bearer ${token1}`
       }
@@ -132,22 +132,12 @@ const Ver = () => {
           <Text style={styles.title}>Editar Reserva</Text>
           <View style={styles.container}>
        
-          <Text style={{ fontWeight: 'bold' }} >{item.description}</Text>
-          <Text>{`Nombre: ${item.name}`}</Text>
+          <Text style={{ fontWeight: 'bold' }} >{item.name}</Text>
+          <Text>{`Nombre: ${item.description}`}</Text>
           <Text>{`Precio: ${item.email}`}</Text>
           <Text>{`Phone: ${item.phone}`}</Text>
          
         </View>
-        <TouchableOpacity onPress={() => setEditingId(item.id)}  style={styles.buttonDisable}>
-        <Text >    Editar Reserva</Text>
-        </TouchableOpacity>
-        {isEditing && (
-          <TouchableOpacity onPress={() => handleEditReservation(item.id)} style={styles.buttonDisable}>
-         
-            <Text >Guardar cambios</Text>
-            
-          </TouchableOpacity>
-        )}
         
       </View>
       </ScrollView>
