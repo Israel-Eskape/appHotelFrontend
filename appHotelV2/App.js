@@ -24,6 +24,8 @@ import VerificationScreen from "./screens/auth/verificationScreen";
 import RegisterScreen from "./screens/auth/registerScreen";
 import SplashScreen from "./screens/splashScreen";
 import OnboardingScreen from "./screens/onboarding/onboardingScreen";
+import HomeScreen from './src/screens/HomeScreen';
+import HotelScreen from './src/screens/HotelsScreen';
 
 LogBox.ignoreAllLogs();
 
@@ -38,6 +40,7 @@ const App = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       >
+        
         <Stack.Screen name="Loading" component={LoadingScreen} />
         <Stack.Screen name="Splash" component={SplashScreen} options={{ ...TransitionPresets.DefaultTransition }} />
         <Stack.Screen name="Onboarding" component={OnboardingScreen} />
@@ -45,6 +48,8 @@ const App = () => {
         <Stack.Screen name="Verification" component={VerificationScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="BottomTabBar" component={BottomTabBarScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="HotelsScreen" component={HotelScreen}/>
         <Stack.Screen name="PopularPlace" component={PopularPlaceScreen} options={{ ...TransitionPresets.FadeFromBottomAndroid }} />
         <Stack.Screen
           name="HotelDetail"
@@ -54,6 +59,7 @@ const App = () => {
             return [item.id];
           }}
         />
+        
         <Stack.Screen name="AllReviews" component={AllReviewsScreen} />
         <Stack.Screen name="PopularExperience" component={PopularExperienceScreen} />
         <Stack.Screen name="BookNow" component={BookNowScreen} />
@@ -65,6 +71,7 @@ const App = () => {
         <Stack.Screen name="EditProfile" component={EditProfileScreen} />
         <Stack.Screen name="InviteFriends" component={InviteFriendsScreen} />
         <Stack.Screen name="TravelProCash" component={TravelProCashScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
